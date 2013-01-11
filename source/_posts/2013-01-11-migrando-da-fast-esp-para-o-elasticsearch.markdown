@@ -3,6 +3,7 @@ layout: post
 title: "Migrando da FAST ESP para o elasticsearch"
 date: 2013-01-11 00:16
 comments: true
+published: false
 categories: 
 ---
 Durante o ano de 2012 me deparei com um grande desafio profissional: migrar a plataforma de busca da globo.com 
