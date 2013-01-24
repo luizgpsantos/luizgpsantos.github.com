@@ -3,7 +3,6 @@ layout: post
 title: "Uma busca para milhões de usuários"
 date: 2013-01-24 09:08
 comments: true
-published: false
 categories:
 ---
 
