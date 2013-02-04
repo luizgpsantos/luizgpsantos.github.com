@@ -4,7 +4,7 @@
   <title><![CDATA[Search Expert]]></title>
   <link href="http://luizgpsantos.github.com/atom.xml" rel="self"/>
   <link href="http://luizgpsantos.github.com/"/>
-  <updated>2013-02-04T15:50:19-02:00</updated>
+  <updated>2013-02-04T15:52:48-02:00</updated>
   <id>http://luizgpsantos.github.com/</id>
   <author>
     <name><![CDATA[Luiz Guilherme P. Santos]]></name>
@@ -12,6 +12,113 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Introdução ao elasticsearch]]></title>
+    <link href="http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch/"/>
+    <updated>2013-02-04T14:27:00-02:00</updated>
+    <id>http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch</id>
+    <content type="html"><![CDATA[<p>Prover uma busca textual para aplicações tem se tornado cada vez mais fácil com as máquinas
+de busca open source disponíveis na internet. O elasticsearch, por exemplo é uma máquina de
+busca cujo modelo de dados é baseado em banco de dados schema-free (não é necessário definir
+a estrutura dos dados a priori) e orientados a documentos. Esse modelo como já mostrado pelo
+movimento #nosql é bastante efetivo para se criar aplicações. O modelo adotado pelo elasticsearch
+é o <a href="http://json.org">JSON</a> e a máquina por trás é o poderoso
+<a href="http://lucene.apache.org/">Apache Lucene</a>.</p>
+
+<p>Uma das principais características do elasticsearch que chama atenção é o fato dele ser distribuído
+o que permite uma fácil escalabilidade
+<a href="http://en.wikipedia.org/wiki/Scalability#Scale_horizontally_vs._vertically">tanto vertical como horizontal</a>
+e alta disponibilidade. Diversas plataformas de cloud se aproveitam dessa natureza para oferecê-lo como serviço.</p>
+
+<p>O elasticsearch é capaz de fazer consultas livres como: ache todos os fabricantes de cerveja, consultas
+estruturadas como: ache todos os fabricantes de cerveja fundadas entre 2011 e 2012. É possível também
+classificar resultados como: retorne o número de latinhas de cerveja fabricadas por cada fabricante. E
+combinar isso tudo: retorne o número médio de latinhas de cerveja fabricadas por cada empresa no período
+de 2011 a 2012, tudo em tempo quase real!</p>
+
+<!-- more -->
+
+
+<p>A distribuição do elasticsearch inclui os seguintes diretórios e arquivos:</p>
+
+<p><img src="http://luizgpsantos.github.com/images/tree_elasticsearch.png" title="Arquivos e diretórios da distribuição do elastisearch" alt="Arquivos e diretórios da distribuição do elastisearch" /></p>
+
+<p>Dentro do diretório <em>bin</em> estão os scripts executáveis, dentro de config estão os arquivos de configuração
+do cluster e de logging. Dentro de lib estão as bibliotecas e ainda existe o velho diretório de logs.</p>
+
+<p>Para startar um nó basta executar o comando:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># executa em foreground</span>
+</span><span class='line'>bin/elasticsearch -f
+</span><span class='line'>
+</span><span class='line'><span class="c"># executa em background</span>
+</span><span class='line'>bin/elasticsearch
+</span><span class='line'>
+</span><span class='line'><span class="c"># loga o arquivo de pid</span>
+</span><span class='line'>bin/elasticsearch -p /var/elasticsearch.pid
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Algumas variáveis de ambiente importantes:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ES_HOME       -&gt; O diretório raiz da instalação
+</span><span class='line'>ES_HEAP_SIZE  -&gt; O HEAP da JVM
+</span><span class='line'>ES_JAVA_OPTS  -&gt; Parâmetros adicionais para a JVM
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Uma introdução rapidinha à API:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># Indexar um documento</span>
+</span><span class='line'>curl -XPUT <span class="s1">&#39;localhost:9200/cerveja/weissbeer/paulanerhefeweissbeer&#39;</span> -d <span class="s1">&#39;{</span>
+</span><span class='line'><span class="s1">    &quot;pais&quot;: &quot;Alemanha&quot;,</span>
+</span><span class='line'><span class="s1">    &quot;ingredientes&quot;: &quot;Água, maltes de trigo e cevada, levedura e lúpulo.&quot;,</span>
+</span><span class='line'><span class="s1">    &quot;temperatura&quot;: &quot;5-7 ºC&quot;</span>
+</span><span class='line'><span class="s1">  }&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Buscar documentos</span>
+</span><span class='line'>curl -XGET <span class="s1">&#39;localhost:9200/cerveja/_search?q=paulaner&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Recuperar um documento específico</span>
+</span><span class='line'>curl -XGET <span class="s1">&#39;localhost:9200/cerveja/weissbeer/paulanerhefeweissbeer&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Apagar um documento</span>
+</span><span class='line'>curl -XDELETE <span class="s1">&#39;localhost:9200/cerveja/weissbeer/paulanerhefeweissbeer&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>No próximo post irei explicar com mais detalhes como utilizar a API do elasticsearch para indexar,
+recuperar e apagar documentos, com algumas dicas importantes para quem deseja fazer um uso mais avançado
+da ferramenta. Até lá!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Uma busca para milhões de usuários]]></title>

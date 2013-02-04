@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Search Expert</title>
+  <title>Introdução ao elasticsearch - Search Expert</title>
   <meta name="author" content="Luiz Guilherme P. Santos">
 
   
@@ -19,7 +19,7 @@ de busca open source disponíveis na internet. O &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://luizgpsantos.github.com/">
+  <link rel="canonical" href="http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -76,15 +76,12 @@ de busca open source disponíveis na internet. O &hellip;">
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/02/04/introducao-ao-elasticsearch/">Introdução ao elasticsearch</a></h1>
+      <h1 class="entry-title">Introdução ao elasticsearch</h1>
     
     
       <p class="meta">
@@ -107,7 +104,7 @@ de busca open source disponíveis na internet. O &hellip;">
   </header>
 
 
-  <div class="entry-content"><p>Prover uma busca textual para aplicações tem se tornado cada vez mais fácil com as máquinas
+<div class="entry-content"><p>Prover uma busca textual para aplicações tem se tornado cada vez mais fácil com as máquinas
 de busca open source disponíveis na internet. O elasticsearch, por exemplo é uma máquina de
 busca cujo modelo de dados é baseado em banco de dados schema-free (não é necessário definir
 a estrutura dos dados a priori) e orientados a documentos. Esse modelo como já mostrado pelo
@@ -126,27 +123,97 @@ classificar resultados como: retorne o número de latinhas de cerveja fabricadas
 combinar isso tudo: retorne o número médio de latinhas de cerveja fabricadas por cada empresa no período
 de 2011 a 2012, tudo em tempo quase real!</p>
 
+<!-- more -->
+
+
+<p>A distribuição do elasticsearch inclui os seguintes diretórios e arquivos:</p>
+
+<p><img src="/images/tree_elasticsearch.png" title="Arquivos e diretórios da distribuição do elastisearch" alt="Arquivos e diretórios da distribuição do elastisearch" /></p>
+
+<p>Dentro do diretório <em>bin</em> estão os scripts executáveis, dentro de config estão os arquivos de configuração
+do cluster e de logging. Dentro de lib estão as bibliotecas e ainda existe o velho diretório de logs.</p>
+
+<p>Para startar um nó basta executar o comando:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># executa em foreground</span>
+</span><span class='line'>bin/elasticsearch -f
+</span><span class='line'>
+</span><span class='line'><span class="c"># executa em background</span>
+</span><span class='line'>bin/elasticsearch
+</span><span class='line'>
+</span><span class='line'><span class="c"># loga o arquivo de pid</span>
+</span><span class='line'>bin/elasticsearch -p /var/elasticsearch.pid
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Algumas variáveis de ambiente importantes:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>ES_HOME       -&gt; O diretório raiz da instalação
+</span><span class='line'>ES_HEAP_SIZE  -&gt; O HEAP da JVM
+</span><span class='line'>ES_JAVA_OPTS  -&gt; Parâmetros adicionais para a JVM
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Uma introdução rapidinha à API:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># Indexar um documento</span>
+</span><span class='line'>curl -XPUT <span class="s1">&#39;localhost:9200/cerveja/weissbeer/paulanerhefeweissbeer&#39;</span> -d <span class="s1">&#39;{</span>
+</span><span class='line'><span class="s1">    &quot;pais&quot;: &quot;Alemanha&quot;,</span>
+</span><span class='line'><span class="s1">    &quot;ingredientes&quot;: &quot;Água, maltes de trigo e cevada, levedura e lúpulo.&quot;,</span>
+</span><span class='line'><span class="s1">    &quot;temperatura&quot;: &quot;5-7 ºC&quot;</span>
+</span><span class='line'><span class="s1">  }&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Buscar documentos</span>
+</span><span class='line'>curl -XGET <span class="s1">&#39;localhost:9200/cerveja/_search?q=paulaner&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Recuperar um documento específico</span>
+</span><span class='line'>curl -XGET <span class="s1">&#39;localhost:9200/cerveja/weissbeer/paulanerhefeweissbeer&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Apagar um documento</span>
+</span><span class='line'>curl -XDELETE <span class="s1">&#39;localhost:9200/cerveja/weissbeer/paulanerhefeweissbeer&#39;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>No próximo post irei explicar com mais detalhes como utilizar a API do elasticsearch para indexar,
+recuperar e apagar documentos, com algumas dicas importantes para quem deseja fazer um uso mais avançado
+da ferramenta. Até lá!</p>
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/02/04/introducao-ao-elasticsearch/">Continue lendo &rarr;</a>
-    </footer>
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/01/24/uma-busca-para-milhoes-de-usuarios/">Uma busca para milhões de usuários</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Luiz Guilherme P. Santos</span></span>
+
+      
 
 
 
@@ -158,39 +225,42 @@ de 2011 a 2012, tudo em tempo quase real!</p>
   
 
 
-<time datetime="2013-01-24T09:08:00-02:00" pubdate data-updated="true">Jan 24<span>th</span>, 2013</time>
-        
-      </p>
+<time datetime="2013-02-04T14:27:00-02:00" pubdate data-updated="true">Feb 4<span>th</span>, 2013</time>
+      
+
+
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>Olá pessoal, esse é meu primeiro post para o blog. Eu pretendo compartilhar aqui
-um pouco daquilo que aprendi no meu mestrado em <em>Information retrieval</em> e na
-construção da nova plataforma de busca da <a href="http://www.globo.com" target="_blank">globo.com</a>
-baseada no <a href="http://elasticsearch.org" target="_blank">elasticsearch</a>.</p>
-
-<p>Tive a oportunidade de fazer o curso <em>Core elasticsearch</em> em Chicago com o
-<a href="https://github.com/kimchy" target="_blank">Shay Banon</a>, criador do elasticsearch,
-e aprendi muita coisa interessante que muitas vezes é difícil de achar na
-documentação, além das dicas impagáveis da pessoa que concebeu toda arquitetura
-da máquina de busca. Vou falar sobre tudo isso aqui!</p>
-
-<p>Espero que gostem e sempre que precisarem estou a disposição para responder às
-dúvidas.</p>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch/" data-via="" data-counturl="http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
 
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/01/24/uma-busca-para-milhoes-de-usuarios/" title="Previous Post: Uma busca para milhões de usuários">&laquo; Uma busca para milhões de usuários</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
+  </section>
+
+</div>
+
 <aside class="sidebar">
   
     <section>
@@ -231,6 +301,7 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -245,7 +316,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
       var disqus_shortname = 'searchexpert';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch/';
+        var disqus_url = 'http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
