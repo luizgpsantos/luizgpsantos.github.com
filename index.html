@@ -9,8 +9,14 @@
   <meta name="author" content="Luiz Guilherme P. Santos">
 
   
-  <meta name="description" content="Prover uma busca textual para aplicações tem se tornado cada vez mais fácil com as máquinas
-de busca open source disponíveis na internet. O &hellip;">
+  <meta name="description" content="Estrutura de dados A estrutura de dados do elasticsearch é baseada em documentos e campos. O documento
+é modelado como um objeto JSON: 1
+2
+3
+4
+5
+6
+7 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -78,6 +84,88 @@ de busca open source disponíveis na internet. O &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao/">A estrutura de dados do elasticsearch e sua API de indexação</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-06T23:45:00-02:00" pubdate data-updated="true">Feb 6<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>Estrutura de dados</h2>
+
+<p>A estrutura de dados do elasticsearch é baseada em documentos e campos. O documento
+é modelado como um objeto JSON:</p>
+
+<figure class='code'> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="p">{</span>
+</span><span class='line'>    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;paulaner&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s2">&quot;nome&quot;</span><span class="o">:</span> <span class="s2">&quot;paulaner&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s2">&quot;website&quot;</span><span class="o">:</span> <span class="s2">&quot;http://www.paulaner.com/&quot;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s2">&quot;localizacao&quot;</span><span class="o">:</span> <span class="p">{</span>
+</span><span class='line'>      <span class="s2">&quot;pais&quot;</span><span class="o">:</span> <span class="s2">&quot;Alemanha&quot;</span><span class="p">,</span>
+</span><span class='line'>      <span class="s2">&quot;cidade&quot;</span><span class="o">:</span> <span class="s2">&quot;Munique&quot;</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Existem campos de metadados que fazem parte do núcleo do elasticsearch:</p>
+
+<pre><code>_id         =&gt; Identificador único de um documento
+_type       =&gt; Tipo do documento
+_source     =&gt; Armazena o documento original que foi indexado
+_all        =&gt; Campo que indexa todos os valores de todos os campos do documento
+_timestamp  =&gt; Timestamp em que o documento foi indexado
+_ttl        =&gt; Define um tempo de expiração do documento
+_size       =&gt; Indexa o tamanho do campo _source
+</code></pre>
+
+<p>Os tipos de dados que os campos dos documentos podem assumir são:</p>
+
+<p><strong>Tipos principais</strong>: string, number, boolean, datetime, binary (base64)<br>
+<strong>Tipos complexos</strong>: Array e Object<br>
+<strong>Outros tipos</strong>: geo_point, ip, attachment, multi-field</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao/">Continue lendo &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -214,6 +302,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao/">A estrutura de dados do elasticsearch e sua API de indexação</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/02/04/introducao-ao-elasticsearch/">Introdução ao elasticsearch</a>
