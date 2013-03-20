@@ -17,6 +17,12 @@
         <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://luizgpsantos.github.com/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao/
+        </loc>
+        <lastmod>2013-03-20T00:08:03-03:00</lastmod>
+    </url>
+    <url>
         <loc>http://luizgpsantos.github.com/about/</loc>
         <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
@@ -26,11 +32,11 @@
     </url>
     <url>
         <loc>http://luizgpsantos.github.com/blog/archives/</loc>
-        <lastmod>2013-03-05T15:46:00-03:00</lastmod>
+        <lastmod>2013-03-20T00:08:03-03:00</lastmod>
     </url>
     <url>
         <loc>http://luizgpsantos.github.com/</loc>
-        <lastmod>2013-03-05T15:46:00-03:00</lastmod>
+        <lastmod>2013-03-20T00:08:03-03:00</lastmod>
     </url>
     <url>
         <loc>http://luizgpsantos.github.com/robots.txt</loc>

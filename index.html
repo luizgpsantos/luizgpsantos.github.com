@@ -9,14 +9,8 @@
   <meta name="author" content="Luiz Guilherme P. Santos">
 
   
-  <meta name="description" content="Estrutura de dados A estrutura de dados do elasticsearch é baseada em documentos e campos. O documento
-é modelado como um objeto JSON: 1
-2
-3
-4
-5
-6
-7 &hellip;">
+  <meta name="description" content="Atualmente o elasticsearch não provê nenhuma camada de segurança para as chamadas à API REST.
+Existem algumas issues abertas no github pedindo a &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +78,55 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao/">Como adicionar uma camada de segurança sobre o elasticsearch: autenticação e autorização</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-06T08:37:00-03:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Atualmente o elasticsearch não provê nenhuma camada de segurança para as chamadas à API REST.
+Existem algumas issues abertas no github pedindo a implementação dessa camada, incluindo,
+<a href="https://github.com/elasticsearch/elasticsearch/issues/1379" target="_blank">autenticação e autorização</a>
+e <a href="https://github.com/elasticsearch/elasticsearch/issues/664" target="_blank" >suporte HTTPS</a>. Porém os
+desenvolvedores do elasticsearch já sinalizaram que essas issues tem baixa prioridade pois podem ser contornadas
+com proxies e plugins. Além disso o elasticsearch sempre deve ser utilizado em ambientes confiáveis, como a rede
+interna de sua empresa, por exemplo. Por tanto a melhor forma de deployar o elasticsearch é com um webserver na
+frente com a responsabilidade de controlar o acesso e os tipos de queries que poderão ser feitas. Sabendo
+disso, existem algumas alternativas que são mais usadas, vamos dar uma passada por cada uma delas.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao/">Continue lendo &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -303,6 +346,10 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao/">Como adicionar uma camada de segurança sobre o elasticsearch: autenticação e autorização</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao/">A estrutura de dados do elasticsearch e sua API de indexação</a>
