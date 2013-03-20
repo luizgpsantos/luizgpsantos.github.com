@@ -4,36 +4,42 @@
         <loc>
             http://luizgpsantos.github.com/blog/2013/01/24/uma-busca-para-milhoes-de-usuarios/
         </loc>
-        <lastmod>2013-01-25T14:24:40-02:00</lastmod>
+        <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
     <url>
         <loc>http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch/</loc>
-        <lastmod>2013-02-04T15:52:42-02:00</lastmod>
+        <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
     <url>
         <loc>
             http://luizgpsantos.github.com/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao/
         </loc>
-        <lastmod>2013-03-05T15:11:14-03:00</lastmod>
+        <lastmod>2013-03-05T15:46:00-03:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://luizgpsantos.github.com/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao/
+        </loc>
+        <lastmod>2013-03-20T00:08:03-03:00</lastmod>
     </url>
     <url>
         <loc>http://luizgpsantos.github.com/about/</loc>
-        <lastmod>2013-01-25T14:24:40-02:00</lastmod>
+        <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
     <url>
         <loc>http://luizgpsantos.github.com/adsense/</loc>
-        <lastmod>2013-01-25T14:24:40-02:00</lastmod>
+        <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
     <url>
         <loc>http://luizgpsantos.github.com/blog/archives/</loc>
-        <lastmod>2013-03-05T15:11:14-03:00</lastmod>
+        <lastmod>2013-03-20T00:08:03-03:00</lastmod>
     </url>
     <url>
         <loc>http://luizgpsantos.github.com/</loc>
-        <lastmod>2013-03-05T15:11:14-03:00</lastmod>
+        <lastmod>2013-03-20T00:08:03-03:00</lastmod>
     </url>
     <url>
         <loc>http://luizgpsantos.github.com/robots.txt</loc>
-        <lastmod>2013-01-25T14:24:40-02:00</lastmod>
+        <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
 </urlset>
