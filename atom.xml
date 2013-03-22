@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Search Expert]]></title>
-  <link href="http://luizgpsantos.github.com/atom.xml" rel="self"/>
-  <link href="http://luizgpsantos.github.com/"/>
-  <updated>2013-03-20T00:08:10-03:00</updated>
-  <id>http://luizgpsantos.github.com/</id>
+  <link href="http://searchexpert.com.br/atom.xml" rel="self"/>
+  <link href="http://searchexpert.com.br/"/>
+  <updated>2013-03-22T17:56:05-03:00</updated>
+  <id>http://searchexpert.com.br/</id>
   <author>
     <name><![CDATA[Luiz Guilherme P. Santos]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Como adicionar uma camada de segurança sobre o elasticsearch: autenticação e autorização]]></title>
-    <link href="http://luizgpsantos.github.com/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao/"/>
+    <link href="http://searchexpert.com.br/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao/"/>
     <updated>2013-03-06T08:37:00-03:00</updated>
-    <id>http://luizgpsantos.github.com/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao</id>
+    <id>http://searchexpert.com.br/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao</id>
     <content type="html"><![CDATA[<p>Atualmente o elasticsearch não provê nenhuma camada de segurança para as chamadas à API REST.
 Existem algumas issues abertas no github pedindo a implementação dessa camada, incluindo,
 <a href="https://github.com/elasticsearch/elasticsearch/issues/1379" target="_blank">autenticação e autorização</a>
@@ -187,9 +187,9 @@ metade do cluster. Para evitar esse cenário podemos utilizar a seguinte configu
   
   <entry>
     <title type="html"><![CDATA[A estrutura de dados do elasticsearch e sua API de indexação]]></title>
-    <link href="http://luizgpsantos.github.com/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao/"/>
+    <link href="http://searchexpert.com.br/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao/"/>
     <updated>2013-02-06T23:45:00-02:00</updated>
-    <id>http://luizgpsantos.github.com/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao</id>
+    <id>http://searchexpert.com.br/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao</id>
     <content type="html"><![CDATA[<h2>Estrutura de dados</h2>
 
 <p>A estrutura de dados do elasticsearch é baseada em documentos e campos. O documento
@@ -370,7 +370,7 @@ A criação automática pode ser desativada utilizando configuração a nível d
 <p>Por fim vamos falar de como funciona a execução distribuída da API de indexação. Vejam a ilustração
 a seguir:</p>
 
-<p><img class="center" src="http://luizgpsantos.github.com/images/index_execution.png"></p>
+<p><img class="center" src="http://searchexpert.com.br/images/index_execution.png"></p>
 
 <p>(I) Uma requisição de indexação é endereçada a um nó específico.<br>
 (II) O elasticsearch calcula o hash (por default utiliza o valor do _id) e escolhe
@@ -383,9 +383,9 @@ réplicas desse shard.</p>
   
   <entry>
     <title type="html"><![CDATA[Introdução ao elasticsearch]]></title>
-    <link href="http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch/"/>
+    <link href="http://searchexpert.com.br/blog/2013/02/04/introducao-ao-elasticsearch/"/>
     <updated>2013-02-04T14:27:00-02:00</updated>
-    <id>http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch</id>
+    <id>http://searchexpert.com.br/blog/2013/02/04/introducao-ao-elasticsearch</id>
     <content type="html"><![CDATA[<p>Prover uma busca textual para aplicações tem se tornado cada vez mais fácil com as máquinas
 de busca open source disponíveis na internet. O elasticsearch, por exemplo é uma máquina de
 busca cujo modelo de dados é baseado em banco de dados schema-free (não é necessário definir
@@ -410,7 +410,7 @@ de 2011 a 2012, tudo em tempo quase real!</p>
 
 <p>A distribuição do elasticsearch inclui os seguintes diretórios e arquivos:</p>
 
-<p><img src="http://luizgpsantos.github.com/images/tree_elasticsearch.png" title="Arquivos e diretórios da distribuição do elastisearch" alt="Arquivos e diretórios da distribuição do elastisearch" /></p>
+<p><img src="http://searchexpert.com.br/images/tree_elasticsearch.png" title="Arquivos e diretórios da distribuição do elastisearch" alt="Arquivos e diretórios da distribuição do elastisearch" /></p>
 
 <p>Dentro do diretório <em>bin</em> estão os scripts executáveis, dentro de config estão os arquivos de configuração
 do cluster e de logging. Dentro de lib estão as bibliotecas e ainda existe o velho diretório de logs.</p>
@@ -490,9 +490,9 @@ da ferramenta. Até lá!</p>
   
   <entry>
     <title type="html"><![CDATA[Uma busca para milhões de usuários]]></title>
-    <link href="http://luizgpsantos.github.com/blog/2013/01/24/uma-busca-para-milhoes-de-usuarios/"/>
+    <link href="http://searchexpert.com.br/blog/2013/01/24/uma-busca-para-milhoes-de-usuarios/"/>
     <updated>2013-01-24T09:08:00-02:00</updated>
-    <id>http://luizgpsantos.github.com/blog/2013/01/24/uma-busca-para-milhoes-de-usuarios</id>
+    <id>http://searchexpert.com.br/blog/2013/01/24/uma-busca-para-milhoes-de-usuarios</id>
     <content type="html"><![CDATA[<p>Olá pessoal, esse é meu primeiro post para o blog. Eu pretendo compartilhar aqui
 um pouco daquilo que aprendi no meu mestrado em <em>Information retrieval</em> e na
 construção da nova plataforma de busca da <a href="http://www.globo.com" target="_blank">globo.com</a>

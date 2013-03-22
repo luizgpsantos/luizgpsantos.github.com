@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: 
 
-Sitemap: http://luizgpsantos.github.com/sitemap.xml 
+Sitemap: http://searchexpert.com.br/sitemap.xml 

@@ -1,45 +1,43 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
-        <loc>
-            http://luizgpsantos.github.com/blog/2013/01/24/uma-busca-para-milhoes-de-usuarios/
-        </loc>
+        <loc>http://searchexpert.com.br/blog/2013/01/24/uma-busca-para-milhoes-de-usuarios/</loc>
         <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
     <url>
-        <loc>http://luizgpsantos.github.com/blog/2013/02/04/introducao-ao-elasticsearch/</loc>
+        <loc>http://searchexpert.com.br/blog/2013/02/04/introducao-ao-elasticsearch/</loc>
         <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://luizgpsantos.github.com/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao/
+            http://searchexpert.com.br/blog/2013/02/06/a-estrutura-de-dados-do-elasticsearch-e-sua-api-de-indexacao/
         </loc>
         <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
     <url>
         <loc>
-            http://luizgpsantos.github.com/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao/
+            http://searchexpert.com.br/blog/2013/03/06/como-adicionar-uma-camada-de-seguranca-sobre-o-elasticsearch-autenticacao-e-autorizacao/
         </loc>
         <lastmod>2013-03-20T00:08:03-03:00</lastmod>
     </url>
     <url>
-        <loc>http://luizgpsantos.github.com/about/</loc>
+        <loc>http://searchexpert.com.br/about/</loc>
         <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
     <url>
-        <loc>http://luizgpsantos.github.com/adsense/</loc>
+        <loc>http://searchexpert.com.br/adsense/</loc>
         <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
     <url>
-        <loc>http://luizgpsantos.github.com/blog/archives/</loc>
+        <loc>http://searchexpert.com.br/blog/archives/</loc>
         <lastmod>2013-03-20T00:08:03-03:00</lastmod>
     </url>
     <url>
-        <loc>http://luizgpsantos.github.com/</loc>
+        <loc>http://searchexpert.com.br/</loc>
         <lastmod>2013-03-20T00:08:03-03:00</lastmod>
     </url>
     <url>
-        <loc>http://luizgpsantos.github.com/robots.txt</loc>
+        <loc>http://searchexpert.com.br/robots.txt</loc>
         <lastmod>2013-03-05T15:46:00-03:00</lastmod>
     </url>
 </urlset>
